@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Hello World Gio</title>
+    <script src="js/aframe.js"></script>
+    <script src="js/arjs.js"></script>
+  </head>
+  <body>
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+
+    <a-assets>
+      <a-asset-item id="untitled" src="Model/untitled.glb"></a-asset-item>
+    </a-assets>
+
+    <a-marker type='barcode' value='5'>
+      <!--
+      <a-light type="directional" position="0 0 0" rotation="-90 0 0" target="#directionaltarget">
+        <a-entity id="directionaltarget" position="0 0 10"></a-entity>
+      </a-light>
+      -->
+        <a-gltf-model src="#untitled"></a-gltf-model>
+    </a-marker>
+
+
+<!--
+    <a-marker type='barcode' value='5'>
+        <a-box position='0 0.5 0' color='yellow'></a-box>
+    </a-marker>
+-->
+      <a-entity camera>  </a-entity>
+
+  </a-scene>
+  </body>
